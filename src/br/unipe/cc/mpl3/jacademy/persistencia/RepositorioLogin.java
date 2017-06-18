@@ -45,7 +45,6 @@ public class RepositorioLogin extends Repositorio {
             database.close();
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex.getMessage());
-        } catch (DriveException ex) {
         }
         return retorno;
     }
@@ -112,7 +111,6 @@ public class RepositorioLogin extends Repositorio {
             database.close();
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex.getMessage());
-        } catch (DriveException ex) {
         }
 
         return professores;

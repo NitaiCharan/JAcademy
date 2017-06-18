@@ -1,6 +1,7 @@
 package br.unipe.cc.mpl3.jacademy.persistencia;
-import br.unipe.cc.mpl3.jacademy.util.DriveException;
+
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,38 +9,58 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
+
 /**
  * Classe para a conexão com a base de dados em MySQL
- * @author paulo
+ *
+ * @author Nitai Charan
  */
-public class DataBase {
+public class DataBase implements IDataBase {
     private Connection connection;
     private Statement statement;
-
-    public DataBase() throws SQLException, DriveException {
+    FileInputStream file;
+    public DataBase(){
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream("config/dataBase.properties"));
+            file =new FileInputStream("config/dataBase.properties");
+            properties.load(file);
             Class.forName("com.mysql.jdbc.Driver");
-
             this.connection = DriverManager.getConnection("jdbc:mysql://" + properties.getProperty("endereco") + ":" + properties.getProperty("porta") + "/" + properties.getProperty("database"), properties.getProperty("usuario"), properties.getProperty("senha"));
-            this.statement = connection.createStatement();
-        } catch (ClassNotFoundException ex) {
-            throw new DriveException("");
+           statement = connection.createStatement();
+           
+           file.close();
+           properties.clone();
+        } catch (FileNotFoundException ex) {
+            System.out.println("Data Base Properties file not found");
+            ex.printStackTrace();
         } catch (IOException ex) {
+            System.out.println("Erro: properties full");
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            System.out.println("Erro: Connection of Data Base");
+            ex.printStackTrace();
+        } catch (SQLException ex) {
+            System.out.println("Data Base Driver Manager file not found");
+            ex.printStackTrace();
+        }finally{
         }
-    }
-
+        
+        
+    } 
+    @Override
     public Connection getConnection() {
-        return connection;
+        return null;
     }
 
+    @Override
     public Statement getStatement() {
-        return statement;
+        return null;
     }
 
-    public void close() throws SQLException{
-        this.statement.close();
-        this.connection.close();
+    @Override
+    public void close() throws SQLException {
+        statement.close();
+        connection.close();
     }
+
 }

@@ -45,7 +45,6 @@ public class RepositorioTurma {
             database.getStatement().close(); // Em avaliação
             resultSet.close();
         } catch (SQLException ex) {
-        }catch (DriveException ex) {
         }
         return dados;
     }

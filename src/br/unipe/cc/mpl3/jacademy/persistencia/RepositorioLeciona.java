@@ -11,8 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -36,7 +34,6 @@ public class RepositorioLeciona {
             resultset.close();
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex.getMessage());
-        } catch (DriveException ex) {
         }
         return lecionas;
     }

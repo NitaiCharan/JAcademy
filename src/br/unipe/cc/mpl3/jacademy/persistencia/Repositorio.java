@@ -12,12 +12,7 @@ public abstract class Repositorio {
     private DataBase database;
 
     protected Repositorio() {
-        try {
-            database = new DataBase();
-        } catch (SQLException ex) {
-            System.out.println("Erro:" + ex.getMessage());
-        } catch (DriveException ex) {
-        }
+        database = new DataBase();
     }
 
     protected void save(String insertSql, Object... parametros) throws SQLException {

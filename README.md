@@ -1,8 +1,11 @@
-# JAcademy
-### Objetivos
+### Descrição
+
+Projeto final da disciplina Metodologia e Linguagem de Programação III
+
+#### Objetivos
 - Apresentar a proposta do projeto final da disciplina Metodologia e Linguagem de Programação III
 - Desenvolver uma aplicação em Swing/JavaFX que crie, altere, leia e apague informações de alunos e disciplinas de uma base de dados do sistema acadêmico no UNIPÊ usando JDBC. O sistema também deve escrever as informações dos alunos e disciplinas em formato de relatório num arquivo de texto.
-### Requisitos
+#### Requisitos
 - REQ 1 - O sistema deve ter uma tela que liste os itens já cadastrados na base de dados.
 - REQ 2 – O Sistema deve ter um menu para acesso as funcionalidades de CRUD (create, read, update and delete).
 - REQ	3	– Fazer	uso extensivo de:

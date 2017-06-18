@@ -46,7 +46,6 @@ public class RepositorioDisciplina implements IRepositorioDisciplina{
             resultSet.close();
         } catch (SQLException ex) {
             System.out.println("Exception RepositorioDisciplina:  " + ex);
-        } catch (DriveException ex) {
         }
         return dados;
     }

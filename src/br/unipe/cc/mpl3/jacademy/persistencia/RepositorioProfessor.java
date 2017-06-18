@@ -95,7 +95,6 @@ public class RepositorioProfessor extends Repositorio implements IRepositorioPro
             database.close();
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex.getMessage());
-        } catch (DriveException ex) {
         }
 
         return professores;
@@ -168,7 +167,6 @@ public class RepositorioProfessor extends Repositorio implements IRepositorioPro
             database.close();
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex.getMessage());
-        } catch (DriveException ex) {
         }
 
         return professor;
@@ -202,7 +200,6 @@ public class RepositorioProfessor extends Repositorio implements IRepositorioPro
             database.close();
         } catch (SQLException ex) {
             System.out.println("Erro:" + ex.getMessage());
-        } catch (DriveException ex) {
         }
         return professores;
     }

@@ -94,9 +94,7 @@ public class RepositorioAluno{
             resultSet.close();
             database.close();
         } catch (SQLException ex) {
-            return null;
-        } catch (DriveException ex) {
-            return null;
+            ex.printStackTrace();
         }
         return lista;    
     }
@@ -129,8 +127,6 @@ public class RepositorioAluno{
             database.close();
        
         } catch (SQLException ex) {
-            return null;
-        } catch (DriveException ex) {
             return null;
         }
         return aluno;
